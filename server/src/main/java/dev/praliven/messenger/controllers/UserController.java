@@ -1,7 +1,6 @@
 package dev.praliven.messenger.controllers;
 
 import dev.praliven.messenger.config.User;
-import dev.praliven.messenger.repositories.UserNotFoundException;
 import dev.praliven.messenger.repositories.UserRepository;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -29,7 +28,7 @@ public class UserController {
     User findById(@PathVariable Integer id){
         Optional<User> user = userRepository.findById(id);
         if(user.isEmpty()){
-            throw new UserNotFoundException();
+            throw new RuntimeException("User Not Found");
         }
         return user.get();
     }
@@ -51,7 +50,7 @@ public class UserController {
     void delete(@PathVariable Integer id){
         Optional<User> user = userRepository.findById(id);
         if(user.isEmpty()){
-            throw new UserNotFoundException();
+            throw new RuntimeException("User Not Found");
         }
         userRepository.delete(user.get());
     }

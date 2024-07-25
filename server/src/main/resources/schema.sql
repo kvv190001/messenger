@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS "user" CASCADE;
+--DROP TABLE IF EXISTS "user" CASCADE;
 
 CREATE TABLE IF NOT EXISTS "user" (
     id serial PRIMARY KEY,
@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS "user" (
     accesstoken varchar(500) NOT NULL
 );
 
-DROP TABLE IF EXISTS chat CASCADE;
+--DROP TABLE IF EXISTS chat CASCADE;
 
 CREATE TABLE IF NOT EXISTS chat (
     id serial PRIMARY KEY,
@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS chat (
     img_url varchar(500) NOT NULL
 );
 
-DROP TABLE IF EXISTS chat_user CASCADE;
+--DROP TABLE IF EXISTS chat_user CASCADE;
 
 CREATE TABLE IF NOT EXISTS chat_user (
     chat_id int NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS chat_user (
     FOREIGN KEY (user_id) REFERENCES "user"(id)
 );
 
-DROP TABLE IF EXISTS message CASCADE;
+--DROP TABLE IF EXISTS message CASCADE;
 
 CREATE TABLE IF NOT EXISTS message (
     id serial PRIMARY KEY,
