@@ -1,0 +1,6 @@
+#Ignore local .idea files
+.idea
+
+#Ignore system files
+Thumbs.db
+.DS_STORE
