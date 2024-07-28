@@ -26,10 +26,14 @@ const App = () => {
                 <img src={logo} className="App-logo" alt="logo" />
                 <div className="App-intro">
                     <h2> User List </h2>
-                    {users.map(user =>
+                    {users.length > 0 ? (
+                        users.map(user =>
                         <div key={user.id}>
                             {user.username}
                         </div>
+                        )
+                    ) : (
+                        <p>None</p>
                     )}
                 </div>
             </header>
