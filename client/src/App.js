@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import logo from './assets/users.svg';
 import './App.css';
+import Chat from './pages/chat/frames/Chat/Chat.js'
 
 const App = () => {
     const [users, setUsers] = useState([]);
@@ -8,7 +9,7 @@ const App = () => {
 
     useEffect(() => {
         setLoading(true);
-        fetch('/api/users')
+        fetch('http://localhost:8080/api/users', {credentials: 'include'})
             .then((response) => response.json())
             .then((data) => {
                 setUsers(data);
@@ -22,21 +23,17 @@ const App = () => {
 
     return(
         <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <div className="App-intro">
-                    <h2> User List </h2>
-                    {users.length > 0 ? (
-                        users.map(user =>
+            <Chat/>
+            <h2> User List </h2>
+                {users.length > 0 ? (
+                    users.map(user =>
                         <div key={user.id}>
                             {user.username}
                         </div>
-                        )
-                    ) : (
-                        <p>None</p>
-                    )}
-                </div>
-            </header>
+                    )
+                ) : (
+                     <p>None</p>
+                )}
         </div>
     )
 }
