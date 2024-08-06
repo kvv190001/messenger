@@ -2,10 +2,12 @@
 
 CREATE TABLE IF NOT EXISTS "user" (
     id serial PRIMARY KEY,
-    googleid int NOT NULL,
+    googleid varchar(100) NOT NULL,
     username varchar(100) NOT NULL,
+    email varchar(100),
     avatarurl varchar(500) NOT NULL,
-    accesstoken varchar(500) NOT NULL
+    accesstoken varchar(500) NOT NULL,
+    registrationsource varchar(100)
 );
 
 --DROP TABLE IF EXISTS chat CASCADE;

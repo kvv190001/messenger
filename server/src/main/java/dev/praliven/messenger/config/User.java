@@ -11,13 +11,14 @@ public record User(
         @Id
         Integer id,
         @NotNull
-        @Positive
-        Integer googleid,
+        String googleid,
         @NotEmpty
         String username,
+        String email,
         @NotEmpty
         String avatarurl,
         @NotEmpty
-        String accesstoken
+        String accesstoken,
+        RegistrationSource registrationsource
 ) {
 }

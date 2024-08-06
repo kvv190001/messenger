@@ -6,6 +6,7 @@ import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -53,5 +54,13 @@ public class UserController {
             throw new RuntimeException("User Not Found");
         }
         userRepository.delete(user.get());
+    }
+
+    public void save(@Valid User user){
+        userRepository.save(user);
+    }
+
+    public Optional<User> findByEmail(String email){
+        return userRepository.findByEmail(email);
     }
 }
