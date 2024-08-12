@@ -1,39 +1,46 @@
 import React, { useState, useEffect } from 'react';
-import logo from './assets/users.svg';
+import './pages/Chat.css';
 import './App.css';
-import Chat from './pages/chat/frames/Chat/Chat.js'
+import Chat from './pages/Chat.js'
+import Login from './pages/Login.js';
 
 const App = () => {
-    const [users, setUsers] = useState([]);
-    const [loading, setLoading] = useState(false);
+    const [user, setUser] = useState();
 
     useEffect(() => {
-        setLoading(true);
-        fetch('http://localhost:8080/api/users', {credentials: 'include'})
-            .then((response) => response.json())
-            .then((data) => {
-                setUsers(data);
-                setLoading(false);
-            });
+        const getUser = async () => {
+            const response = await fetch('http://localhost:8080/api/users/login/success', { credentials: 'include' });
+            const data = await response.json();
+            setUser(data);
+        }
+
+        getUser();
     }, []);
 
-    if (loading) {
-        return <p>Loading...</p>;
+    const logout = async () => {
+        const options = {
+            method: 'POST',
+            credentials: 'include'
+        }
+
+        const response = await fetch('http://localhost:8080/logout', options);
+        window.location.href = '/';
     }
 
-    return(
+    return (
         <div className="App">
-            <Chat/>
-            <h2> User List </h2>
-                {users.length > 0 ? (
-                    users.map(user =>
-                        <div key={user.id}>
-                            {user.username}
-                        </div>
-                    )
-                ) : (
-                     <p>None</p>
-                )}
+            {
+                user ?
+                    <Chat user={user} /> : <Login />
+            }
+            {/* {
+                 user ?
+                    <div key={user.id}>
+                        {user.username}
+                    <button onClick={logout} className='headerBtn'>Logout</button>
+                    </div> : <></>
+
+            } */}
         </div>
     )
 }

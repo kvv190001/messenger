@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import dev.praliven.messenger.config.Chat;
 import dev.praliven.messenger.repositories.ChatRepository;
+import dev.praliven.messenger.repositories.ChatRepositoryImpl;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -30,6 +31,11 @@ public class ChatController {
             throw new RuntimeException("Chat Not Found");
         }
         return chat.get();
+    }
+
+    @GetMapping("/user/{id}")
+    List<Chat> findChatsByUser(@PathVariable Integer id){
+        return chatRepository.findChatsByUser(id);
     }
 
     @ResponseStatus(HttpStatus.CREATED)
