@@ -1,0 +1,82 @@
+.messageBubble {
+    display: inline-block;
+    max-width: 200px;
+    padding: 4px 8px;
+    font-size: 12px;
+    color: #e0e0e0;
+    border: none;
+    border-radius: 4px;
+    position: relative;
+    margin: 2px 6px;
+}
+
+.imageBubble {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+    padding: 4px;
+    font-size: 12px;
+    color: none;
+    border: none;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    margin: 2px 6px;
+}
+
+.timestamp {
+    display: inline-block;
+    padding: 4px;
+    font-size: 8px;
+    color: #5f5f5f;
+    border: none;
+    margin: 2px;
+}
+
+.image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.messageBubble.Sender {
+    background-color: #08d95f
+}
+
+.messageBubble.Receiver {
+    background-color: #c0c0c0
+}
+
+.imageBubble.Sender {
+    background-color: #08d95f
+}
+
+.imageBubble.Receiver {
+    background-color: #c0c0c0
+}
+
+.messageBubble.Sender::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border-left: 10px soid transparent;
+    border-right: 10px soid transparent;
+    border-top: 10px solid #08d95f;
+}
+
+.messageBubble.Receiver::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 10px;
+    width: 0;
+    height: 0;
+    border-left: 10px soid transparent;
+    border-right: 10px soid transparent;
+    border-top: 10px solid #c0c0c0;
+}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Chat.css';
+import './pages/Messages.js'
 
 const Chat = ({ user }) => {
     const SERVER_URL = 'http://localhost:8080';
@@ -76,7 +77,7 @@ const Chat = ({ user }) => {
                 </div>
                 <div className="chat-messages">
                     {
-                        //messages here
+                        <Messages user={user} chat={chat}/>
                     }
                 </div>
                 <div className="chat-input">
