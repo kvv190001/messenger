@@ -75,14 +75,9 @@ const Chat = ({ user }) => {
                     <button onClick={logout} className='headerBtn'>Logout</button>
                 </div>
                 <div className="chat-messages">
-                    <div className="message">Hello, world!</div>
-                    <div className="message">Hello, world!</div>
-                    <div className="message">Hello, world!</div>
-                    <div className="message">Hello, world!</div>
-                    <div className="message">Hello, world!</div>
-                    <div className="message">Hello, world!</div>
-                    <div className="message image-message"><img src="image.png" alt="Image" /></div>
-                    <div className="message sent">Hello, world!</div>
+                    {
+                        //messages here
+                    }
                 </div>
                 <div className="chat-input">
                     <input type="text" placeholder="Type a message" />

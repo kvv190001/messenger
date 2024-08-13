@@ -13,6 +13,23 @@ body {
     background-color: #f5f5f5;
 }
 
+.headerBtn {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 12px;
+    color: #e0e0e0;
+    background-color: #555;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.headerBtn:hover {
+    background-color: #777;
+}
+
 .container {
     display: flex;
     width: 100%;
