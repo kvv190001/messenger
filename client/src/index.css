@@ -13,38 +13,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.ButtonAction {
-
+#root {
+  width: 100%;
 }
 
-.ButtonAction.ChatFooter {
-
-}
-
-.ButtonAction.ChatDialog {
-
-}
-
-.ButtonAction.StartLogin {
-
-}
-
-.ButtonNav {
-
-}
-
-.InputField {
-
-}
-
-.InputField.ChatFooter {
-
-}
-
-.InputField.ChatDialog {
-
-}
-
-.InputField.StartLogin {
-
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }

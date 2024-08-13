@@ -1,8 +1,8 @@
 -- Insert users
-INSERT INTO "user" (googleid, username, avatarurl, accesstoken) VALUES
-(123456, 'user1', 'http://example.com/avatar1.png', 'token1'),
-(123457, 'user2', 'http://example.com/avatar2.png', 'token2'),
-(123458, 'user3', 'http://example.com/avatar3.png', 'token3');
+INSERT INTO "user" (googleid, username, email, avatarurl, accesstoken, registrationSource) VALUES
+('123456', 'user1', 'user1@gmail.com', 'http://example.com/avatar1.png', 'token1', 'TEST'),
+('123457', 'user2', 'user2@gmail.com','http://example.com/avatar2.png', 'token2', 'TEST'),
+('123458', 'user3', 'user3@gmail.com','http://example.com/avatar3.png', 'token3', 'TEST');
 
 -- Insert chats
 INSERT INTO chat (name, img_url) VALUES
