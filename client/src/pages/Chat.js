@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import Messages from './Messages.js';
 import './Chat.css';
-import './pages/Messages.js'
 
 const Chat = ({ user }) => {
     const SERVER_URL = 'http://localhost:8080';
@@ -77,7 +77,13 @@ const Chat = ({ user }) => {
                 </div>
                 <div className="chat-messages">
                     {
-                        <Messages user={user} chat={chat}/>
+                        chats.length > 0 ? (
+                            chats.map(chat =>
+                                <Messages user={user} chat={chat}/>
+                            )
+                        ) : (
+                            <></>
+                        )
                     }
                 </div>
                 <div className="chat-input">

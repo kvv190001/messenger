@@ -25,26 +25,30 @@ const Messages = ({ user, chat }) => {
     }, []);
 
     return (
+        <>
         {
             messages.length > 0 ? (
                 messages.map(message =>
-                    message.img_url.length > 0 ? (
-                        <div className={'messageBubble' (message.user_id === user.id) ? 'Sender' : 'Receiver'}>
-                            {message.message}
+                    <div>
+                        message.img_url.length > 0 ? (
+                            <div className={'messageBubble' (message.user_id === user.id) ? 'Sender' : 'Receiver'}>
+                                {message.message}
+                            </div>
+                        ) : (
+                            <div className={'imageBubble' (message.user_id === user.id) ? 'Sender' : 'Receiver'}>
+                                <img src="./assets/smile.svg" className="image"/>
+                            </div>
+                        )
+                        <div className="timestamp">
+                            {message.created_at}
                         </div>
-                    ) : (
-                        <div className={'imageBubble' (message.user_id === user.id) ? 'Sender' : 'Receiver'}>
-                            <img src="./assets/smile.svg" className="image"/>
-                        </div>
-                    ),
-                    <div className="timestamp">
-                        {message.created_at}
                     </div>
                 )
             ) : (
                 <></>
             )
         }
+        </>
     )
 
 }
