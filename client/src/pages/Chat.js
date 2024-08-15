@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { API_URL } from '../constants.js'
+import { API_URL } from '../constants'
+import BubbleText from '../components/BubbleText';
+import BubbleImage from '../components/BubbleImage';
 import './Chat.css';
 
 const Chat = ({ user }) => {
@@ -36,6 +38,38 @@ const Chat = ({ user }) => {
     useEffect(() => {
         getChats();
     }, []);
+
+    const ourTextMessage = {
+        chat_id: null,
+        user_id: user?.id,
+        message: "I'm fixing a hole where the rain gets in, and stops my mind from wandering.. where it will go?",
+        img_url: null,
+        created_at: "6:44 PM"
+    };
+
+    const otherTextMessage = {
+        chat_id: null,
+        user_id: null,
+        message: "I'm fixing a hole where the rain gets in, and stops my mind from wandering.. where it will go?",
+        img_url: null,
+        created_at: "6:44 PM"
+    };
+
+    const ourImageMessage = {
+        chat_id: null,
+        user_id: user?.id,
+        message: null,
+        img_url: "../assets/image.svg",
+        created_at: "6:44 PM"
+    };
+
+    const otherImageMessage = {
+        chat_id: null,
+        user_id: null,
+        message: null,
+        img_url: "../assets/image.svg",
+        created_at: "6:44 PM"
+    };
 
     return (
         <div className="container">
@@ -74,14 +108,20 @@ const Chat = ({ user }) => {
                     <button onClick={logout} className='headerBtn'>Logout</button>
                 </div>
                 <div className="chat-messages">
-                    <div className="message">Hello, world!</div>
-                    <div className="message">Hello, world!</div>
-                    <div className="message">Hello, world!</div>
-                    <div className="message">Hello, world!</div>
-                    <div className="message">Hello, world!</div>
-                    <div className="message">Hello, world!</div>
-                    <div className="message image-message"><img src="image.png" alt="Image" /></div>
-                    <div className="message sent">Hello, world!</div>
+                    <BubbleText message={ourTextMessage}/>
+                    <BubbleImage message={ourImageMessage}/>
+                    <BubbleText message={otherTextMessage}/>
+                    <BubbleText message={ourTextMessage}/>
+                    <BubbleImage message={ourImageMessage}/>
+                    <BubbleText message={otherTextMessage}/>
+                    <BubbleText message={ourTextMessage}/>
+                    <BubbleImage message={otherImageMessage}/>
+                    <BubbleText message={otherTextMessage}/>
+                    <BubbleText message={ourTextMessage}/>
+                    <BubbleText message={ourTextMessage}/>
+                    <BubbleImage message={otherImageMessage}/>
+                    <BubbleText message={ourTextMessage}/>
+                    <BubbleText message={ourTextMessage}/>
                 </div>
                 <div className="chat-input">
                     <input type="text" placeholder="Type a message" />

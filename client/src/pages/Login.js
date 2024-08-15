@@ -1,5 +1,5 @@
 import React from "react"
-import { API_URL } from "../constants.js"
+import { API_URL } from "../constants"
 import './Login.css'
 
 const Login = () => {

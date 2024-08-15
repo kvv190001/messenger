@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { API_URL } from './constants.js';
+import { API_URL } from './constants';
 import './pages/Chat.css';
 import './App.css';
 import Chat from './pages/Chat.js'
