@@ -12,31 +12,6 @@
     position: relative;
 }
 
-.bubble::after {
-    content: "";
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-size: contain;
-    background-position: center;
-}
-
-.bubble.Sender::after {
-    bottom: 10px;
-    right: -5px;
-    background: url('../assets/tailSender.svg') no-repeat;
-    transform: translateY(calc(50% + 5px));
-    transform-origin: bottom center;
-}
-
-.bubble.Receiver::after {
-    bottom: 10px;
-    left: -5px;
-    background: url('../assets/tailReceiver.svg') no-repeat;
-    transform: translateY(calc(50% + 5px)) scaleX(-1) ;
-    transform-origin: bottom center;
-}
-
 .bubble.Sender {
     color: var(--text-on-sender);
     background-color: var(--bubble-sender);
