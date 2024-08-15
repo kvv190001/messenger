@@ -1,0 +1,77 @@
+@import '../constants.css';
+
+.bubble.Sender {
+    color: var(--text-on-sender);
+    background-color: var(--bubble-sender);
+}
+
+.bubble.Receiver {
+    color: var(--text-on-receiver);
+    background-color: var(--bubble-receiver);
+}
+
+.bubble.Sender::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border-left: 10px soid transparent;
+    border-right: 10px soid transparent;
+    border-top: 10px solid var(--bubble-sender);
+}
+
+.bubble.Receiver::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 10px;
+    width: 0;
+    height: 0;
+    border-left: 10px soid transparent;
+    border-right: 10px soid transparent;
+    border-top: 10px solid var(--bubble-receiver);
+}
+
+.bubble.Text {
+    display: inline-block;
+    max-width: 200px;
+    padding: 4px 8px;
+    font-size: 12px;
+    border: none;
+    border-radius: 4px;
+    position: relative;
+    margin: 2px 6px;
+}
+
+.bubble.Image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+    padding: 4px;
+    font-size: 12px;
+    color: none;
+    border: none;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    margin: 2px 6px;
+}
+
+.timestamp {
+    display: inline-block;
+    padding: 4px;
+    font-size: 8px;
+    color: var(--tertiary-color);
+    border: none;
+    margin: 2px;
+}
+
+.image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}

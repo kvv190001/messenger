@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { API_URL } from '../constants.js'
 import './Chat.css';
 
 const Chat = ({ user }) => {
-    const SERVER_URL = 'http://localhost:8080';
-
     const [chats, setChats] = useState([]);
 
     const getChats = async () => {
-        console.log(SERVER_URL)
+        console.log(API_URL)
         const response = await fetch(
-            SERVER_URL + '/api/chats/user/' + user.id,
+            API_URL + '/api/chats/user/' + user.id,
             { method: 'GET', redirect: "follow", credentials: 'include' }
         ).then((response) => response);
 
@@ -26,7 +25,7 @@ const Chat = ({ user }) => {
             credentials: 'include'
         }
 
-        const response = await fetch('http://localhost:8080/logout', options);
+        const response = await fetch(API_URL + '/logout', options);
         window.location.href = '/';
     }
 

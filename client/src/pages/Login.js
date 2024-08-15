@@ -1,4 +1,5 @@
 import React from "react"
+import { API_URL } from "../constants.js"
 import './Login.css'
 
 const Login = () => {
@@ -7,7 +8,7 @@ const Login = () => {
             <div>
                 <h1>Messenger</h1>
             </div>
-            <a href="http://localhost:8080/oauth2/authorization/google" className="google-btn">
+            <a href={API_URL + "/oauth2/authorization/google"} className="google-btn">
                 <img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png" alt="Google Logo" />
                 Login with Google
             </a>

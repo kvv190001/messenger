@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { API_URL } from './constants.js';
 import './pages/Chat.css';
 import './App.css';
 import Chat from './pages/Chat.js'
@@ -9,7 +10,7 @@ const App = () => {
 
     useEffect(() => {
         const getUser = async () => {
-            const response = await fetch('http://localhost:8080/api/users/login/success', { credentials: 'include' });
+            const response = await fetch(API_URL + '/api/users/login/success', { credentials: 'include' });
             const data = await response.json();
             setUser(data);
         }
@@ -23,7 +24,7 @@ const App = () => {
             credentials: 'include'
         }
 
-        const response = await fetch('http://localhost:8080/logout', options);
+        const response = await fetch(API_URL + '/logout', options);
         window.location.href = '/';
     }
 
