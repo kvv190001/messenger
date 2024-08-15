@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react'
 import { API_URL } from '../constants'
 import './Bubble.css';
 
-const BubbleImage = ({ message }) => {
+const Bubble = ({ message }) => {
     const containerRef = useRef(null);
     const bubbleRef = useRef(null);
     const [containerHeight, setContainerHeight] = useState('auto');
@@ -31,23 +31,18 @@ const BubbleImage = ({ message }) => {
 
     const context = user ? (user.id === message.user_id ? "Sender" : "Receiver") : "Receiver";
     return (
-        <>
+        <div className="relativeContainer" ref={containerRef} style={{ height: containerHeight }}>
         {
-            message?.img_url ? (
-                <>
-                    <div className="space"/>
-                    <div className="relativeContainer" ref={containerRef} style={{ height: containerHeight }}>
-                        <div className={"bubble Image " + context} ref={bubbleRef}>
-                            <img src={message.img_url}/>
-                        </div>
-                    </div>
-                </>
+            message?.message ? (
+                <div className={"bubble Text " + context} ref={bubbleRef}>
+                    { message.message }
+                </div>
             ) : (
                 <></>
             )
         }
-        </>
+        </div>
     )
 }
 
-export default BubbleImage;
+export default Bubble;

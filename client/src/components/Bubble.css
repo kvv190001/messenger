@@ -1,11 +1,8 @@
 @import '../index.css';
 
-.space {
-    margin: 20px 0px;
-}
-
 .relativeContainer {
     position: relative;
+    margin: 20px 0px;
 }
 
 .bubble {

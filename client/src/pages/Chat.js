@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { API_URL } from '../constants'
-import BubbleText from '../components/BubbleText';
-import BubbleImage from '../components/BubbleImage';
+import Bubble from '../components/Bubble';
 import './Chat.css';
 
 const Chat = ({ user }) => {
@@ -55,22 +54,6 @@ const Chat = ({ user }) => {
         created_at: "6:44 PM"
     };
 
-    const ourImageMessage = {
-        chat_id: null,
-        user_id: user?.id,
-        message: null,
-        img_url: "../assets/image.svg",
-        created_at: "6:44 PM"
-    };
-
-    const otherImageMessage = {
-        chat_id: null,
-        user_id: null,
-        message: null,
-        img_url: "../assets/image.svg",
-        created_at: "6:44 PM"
-    };
-
     return (
         <div className="container">
             <div className="sidebar">
@@ -108,20 +91,16 @@ const Chat = ({ user }) => {
                     <button onClick={logout} className='headerBtn'>Logout</button>
                 </div>
                 <div className="chat-messages">
-                    <BubbleText message={ourTextMessage}/>
-                    <BubbleImage message={ourImageMessage}/>
-                    <BubbleText message={otherTextMessage}/>
-                    <BubbleText message={ourTextMessage}/>
-                    <BubbleImage message={ourImageMessage}/>
-                    <BubbleText message={otherTextMessage}/>
-                    <BubbleText message={ourTextMessage}/>
-                    <BubbleImage message={otherImageMessage}/>
-                    <BubbleText message={otherTextMessage}/>
-                    <BubbleText message={ourTextMessage}/>
-                    <BubbleText message={ourTextMessage}/>
-                    <BubbleImage message={otherImageMessage}/>
-                    <BubbleText message={ourTextMessage}/>
-                    <BubbleText message={ourTextMessage}/>
+                    <Bubble message={ourTextMessage}/>
+                    <Bubble message={otherTextMessage}/>
+                    <Bubble message={ourTextMessage}/>
+                    <Bubble message={otherTextMessage}/>
+                    <Bubble message={ourTextMessage}/>
+                    <Bubble message={otherTextMessage}/>
+                    <Bubble message={ourTextMessage}/>
+                    <Bubble message={ourTextMessage}/>
+                    <Bubble message={ourTextMessage}/>
+                    <Bubble message={ourTextMessage}/>
                 </div>
                 <div className="chat-input">
                     <input type="text" placeholder="Type a message" />
