@@ -1,6 +1,7 @@
 package dev.praliven.messenger.repositories;
 
 import dev.praliven.messenger.config.Chat;
+import dev.praliven.messenger.config.Message;
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Repository;
 
@@ -20,5 +21,14 @@ public class ChatRepositoryImpl implements CustomChatRepository {
                 .param("id", id)
                 .query(Chat.class)
                 .list();
+    }
+
+    @Override
+    public Message findLatestMessage(Integer id) {
+        return jdbcClient.sql("SELECT * FROM message WHERE chat_id = :chat_id ORDER BY created_at DESC LIMIT 1")
+                .param("chat_id", id)
+                .query(Message.class)
+                .stream().findFirst().orElse(null);
+
     }
 }

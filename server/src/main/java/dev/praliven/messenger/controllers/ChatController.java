@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import dev.praliven.messenger.config.Chat;
+import dev.praliven.messenger.config.Message;
 import dev.praliven.messenger.repositories.ChatRepository;
 import dev.praliven.messenger.repositories.ChatRepositoryImpl;
 import jakarta.validation.Valid;
@@ -58,5 +59,10 @@ public class ChatController {
             throw new RuntimeException("Chat Not Found");
         }
         chatRepository.delete(chat.get());
+    }
+
+    @GetMapping("/{id}/latest-message")
+    Message findLatestMessage(@PathVariable Integer id){
+        return chatRepository.findLatestMessage(id);
     }
 }
