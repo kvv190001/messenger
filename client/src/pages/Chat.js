@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import { API_URL } from '../constants'
+import Bubble from '../components/Bubble';
 import './Chat.css';
 
 const Chat = ({ user }) => {
-    const SERVER_URL = 'http://localhost:8080';
-
     const [chats, setChats] = useState([]);
 
     const getChats = async () => {
-        console.log(SERVER_URL)
+        console.log(API_URL)
         const response = await fetch(
-            SERVER_URL + '/api/chats/user/' + user.id,
+            API_URL + '/api/chats/user/' + user.id,
             { method: 'GET', redirect: "follow", credentials: 'include' }
         ).then((response) => response);
 
@@ -26,7 +26,7 @@ const Chat = ({ user }) => {
             credentials: 'include'
         }
 
-        const response = await fetch('http://localhost:8080/logout', options);
+        const response = await fetch(API_URL + '/logout', options);
         window.location.href = '/';
     }
 
@@ -37,6 +37,22 @@ const Chat = ({ user }) => {
     useEffect(() => {
         getChats();
     }, []);
+
+    const ourTextMessage = {
+        chat_id: null,
+        user_id: user?.id,
+        message: "I'm fixing a hole where the rain gets in, and stops my mind from wandering.. where it will go?",
+        img_url: null,
+        created_at: "6:44 PM"
+    };
+
+    const otherTextMessage = {
+        chat_id: null,
+        user_id: null,
+        message: "I'm fixing a hole where the rain gets in, and stops my mind from wandering.. where it will go?",
+        img_url: null,
+        created_at: "6:44 PM"
+    };
 
     return (
         <div className="container">
@@ -75,14 +91,16 @@ const Chat = ({ user }) => {
                     <button onClick={logout} className='headerBtn'>Logout</button>
                 </div>
                 <div className="chat-messages">
-                    <div className="message">Hello, world!</div>
-                    <div className="message">Hello, world!</div>
-                    <div className="message">Hello, world!</div>
-                    <div className="message">Hello, world!</div>
-                    <div className="message">Hello, world!</div>
-                    <div className="message">Hello, world!</div>
-                    <div className="message image-message"><img src="image.png" alt="Image" /></div>
-                    <div className="message sent">Hello, world!</div>
+                    <Bubble message={ourTextMessage}/>
+                    <Bubble message={otherTextMessage}/>
+                    <Bubble message={ourTextMessage}/>
+                    <Bubble message={otherTextMessage}/>
+                    <Bubble message={ourTextMessage}/>
+                    <Bubble message={otherTextMessage}/>
+                    <Bubble message={ourTextMessage}/>
+                    <Bubble message={ourTextMessage}/>
+                    <Bubble message={ourTextMessage}/>
+                    <Bubble message={ourTextMessage}/>
                 </div>
                 <div className="chat-input">
                     <input type="text" placeholder="Type a message" />

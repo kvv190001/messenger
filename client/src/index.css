@@ -1,3 +1,25 @@
+:root {
+  --primary-color: #00B3EC;
+  --primary-light-color: #A9DCEC;
+  --secondary-color: #FFF;
+  --tertiary-color: #2C2C2C;
+
+  --text-on-button: var(--secondary-color);
+  --text-on-sender: #FFF;
+  --text-on-receiver: #000;
+  --text-hyperlink: #3290FF;
+
+  --bubble-sender: #69DE56;
+  --bubble-receiver: #D9D9D9;
+
+  --button-default: var(--tertiary-color);
+  --button-selected: color(var(--button-default) lightness(10%));
+
+  --badge-scheme-default: var(--bubble-receiver);
+  --badge-scheme-green: #6DFFDC;
+  --badge-scheme-red: #FF6D6D;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

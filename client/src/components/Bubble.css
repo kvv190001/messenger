@@ -1,0 +1,65 @@
+@import '../index.css';
+
+.relativeContainer {
+    position: relative;
+    margin: 20px 0px;
+}
+
+.bubble {
+    border: none;
+    border-radius: 15px;
+    margin: 2px 6px;
+    position: relative;
+}
+
+.bubble.Sender {
+    color: var(--text-on-sender);
+    background-color: var(--bubble-sender);
+    position: absolute;
+    right: 20px;
+}
+
+.bubble.Receiver {
+    color: var(--text-on-receiver);
+    background-color: var(--bubble-receiver);
+}
+
+.bubble.Link {
+    color: var(--text-hyperlink);
+    text-decoration: underline;
+}
+
+.bubble.Text {
+    display: inline-block;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 300px;
+    padding: 8px 12px;
+    font-size: 12px;
+}
+
+.bubble.Image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    padding: 4px;
+    color: none;
+    overflow: hidden;
+}
+
+.timestamp {
+    display: inline-block;
+    padding: 4px;
+    font-size: 8px;
+    color: var(--tertiary-color);
+    border: none;
+    margin: 2px;
+}
+
+.image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
