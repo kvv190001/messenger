@@ -33,9 +33,9 @@ CREATE TABLE IF NOT EXISTS message (
     id serial PRIMARY KEY,
     chat_id int NOT NULL,
     user_id int NOT NULL,
-    message varchar(500) NOT NULL,
-    img_url varchar(500) NOT NULL,
-    created_at TIMESTAMP NOT NULL,
+    message varchar(500),
+    img_url varchar(500),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (chat_id) REFERENCES chat(id),
     FOREIGN KEY (user_id) REFERENCES "user"(id)
 );

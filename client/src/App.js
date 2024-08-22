@@ -34,14 +34,6 @@ const App = () => {
                 user ?
                     <Chat user={user} /> : <Login />
             }
-            {/* {
-                 user ?
-                    <div key={user.id}>
-                        {user.username}
-                    <button onClick={logout} className='headerBtn'>Logout</button>
-                    </div> : <></>
-
-            } */}
         </div>
     )
 }

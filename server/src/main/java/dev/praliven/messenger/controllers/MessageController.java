@@ -53,4 +53,9 @@ public class MessageController {
         }
         messageRepository.delete(message.get());
     }
+
+    @GetMapping("/chat/{id}")
+    List<Message> findMessagesByChat(@PathVariable Integer id){
+        return messageRepository.findMessagesByChat(id);
+    }
 }

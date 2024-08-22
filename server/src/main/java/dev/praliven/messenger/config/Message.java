@@ -14,11 +14,7 @@ public record Message(
         @NotNull
         @Positive
         Integer user_id,
-        @NotEmpty
         String message,
-        @NotEmpty
-        String img_url,
-        @NotEmpty
-        String created_at
+        String img_url
 ) {
 }

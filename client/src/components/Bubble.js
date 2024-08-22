@@ -2,11 +2,11 @@ import React, { useRef, useEffect, useState } from 'react'
 import { API_URL } from '../constants'
 import './Bubble.css';
 
-const Bubble = ({ message }) => {
+const Bubble = ({ message, user }) => {
     const containerRef = useRef(null);
     const bubbleRef = useRef(null);
     const [containerHeight, setContainerHeight] = useState('auto');
-    const [user, setUser] = useState();
+    // const [user, setUser] = useState();
 
     useEffect(() => {
         const adjustContainerHeight = () => {
@@ -17,14 +17,14 @@ const Bubble = ({ message }) => {
             }
         };
         
-        const getUser = async () => {
-            const response = await fetch(API_URL + '/api/users/login/success', { credentials: 'include' });
-            const data = await response.json();
-            setUser(data);
-        }
+        // const getUser = async () => {
+        //     const response = await fetch(API_URL + '/api/users/login/success', { credentials: 'include' });
+        //     const data = await response.json();
+        //     setUser(data);
+        // }
 
         adjustContainerHeight();
-        getUser();
+        // getUser();
         window.addEventListener('resize', adjustContainerHeight);
         return () => window.removeEventListener('resize', adjustContainerHeight);
     }, []);

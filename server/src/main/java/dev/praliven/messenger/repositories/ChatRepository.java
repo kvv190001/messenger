@@ -9,5 +9,5 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface ChatRepository extends ListCrudRepository<Chat, Integer>,CustomChatRepository {
+public interface ChatRepository extends ListCrudRepository<Chat, Integer>, CustomChatRepository {
 }
