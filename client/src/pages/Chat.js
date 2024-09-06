@@ -74,6 +74,8 @@ const Chat = ({ user }) => {
         if (chat) {
             getMessages();
         }
+
+        window.scrollTo(0, document.body.scrollHeight);
     }, [chat]);
 
     return (

@@ -46,7 +46,6 @@ public class Security {
                         .deleteCookies("JSESSIONID")
                 )
                 .oauth2Login(oauth2 -> {
-                    oauth2.loginPage("/login").permitAll();
                     oauth2.successHandler(oAuth2LoginSuccessHandler);
                 })
                 .build();
