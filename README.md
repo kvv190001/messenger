@@ -38,13 +38,21 @@
 
 ## 📍 Overview
 
-<code>❯ REPLACE-ME</code>
+A clean and responsive web-based messaging application built with Java (Spring Boot) for the backend and React for the frontend. The app enables real-time conversations with a smooth user experience and persistent chat history.
 
 ---
 
 ## 👾 Features
 
-<code>❯ REPLACE-ME</code>
+- Modern UI: Clean, chat-style interface with conversation bubbles and smooth transitions.
+- Real-Time Messaging: Instant message delivery using WebSockets.
+- User Authentication: Simple login flow to simulate individual user sessions.
+- Message Persistence: All conversations are stored in a backend database (e.g., MySQL/PostgreSQL).
+- Contact List: Start and switch between conversations with different users.
+- Typing Indicator: Real-time feedback when another user is typing.
+- Responsive Design: Fully functional on desktop and mobile browsers.
+- Timestamps: Each message includes a timestamp to keep track of conversation flow.
+- Efficient Performance: Fast and lightweight frontend backed by a robust API.
 
 ---
 
