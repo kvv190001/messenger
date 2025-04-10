@@ -3,7 +3,7 @@
 </p>
 <p align="center"><h1 align="center">MESSENGER</h1></p>
 <p align="center">
-	<em><code>❯ REPLACE-ME</code></em>
+	<em><code>❯ Messaging Web App (Java + React)</code></em>
 </p>
 <p align="center">
 	<img src="https://img.shields.io/github/license/kvv190001/messenger?style=default&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
