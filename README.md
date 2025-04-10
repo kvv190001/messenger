@@ -6,7 +6,6 @@
 	<em><code>❯ Messaging Web App (Java + React)</code></em>
 </p>
 <p align="center">
-	<img src="https://img.shields.io/github/license/kvv190001/messenger?style=default&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
 	<img src="https://img.shields.io/github/last-commit/kvv190001/messenger?style=default&logo=git&logoColor=white&color=0080ff" alt="last-commit">
 	<img src="https://img.shields.io/github/languages/top/kvv190001/messenger?style=default&color=0080ff" alt="repo-top-language">
 	<img src="https://img.shields.io/github/languages/count/kvv190001/messenger?style=default&color=0080ff" alt="repo-language-count">
