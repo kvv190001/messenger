@@ -75,14 +75,23 @@ Install messenger using one of the following methods:
 ❯ cd messenger
 ```
 
-3. Install the project dependencies:
-
-
-**Using `npm`** &nbsp; [<img align="center" src="" />]()
-
+3. Navigate to the server directory:
 ```sh
-❯ echo 'INSERT-INSTALL-COMMAND-HERE'
+❯ cd server
 ```
+
+4. Install dependencies and build the project:
+```sh
+❯ mvn clean install
+```
+
+5. Run the backend server:
+```sh
+❯ mvn spring-boot:run
+```
+By default, it will run on: http://localhost:8080
+
+
 
 
 
