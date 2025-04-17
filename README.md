@@ -85,34 +85,28 @@ Install messenger using one of the following methods:
 ❯ mvn clean install
 ```
 
-5. Run the backend server:
+5. Navigate to the client directory:
+```sh
+❯ cd client
+```
+
+6. Install dependencies:
+```sh
+❯ npm install
+```
+
+### 🤖 Usage
+1. Run the backend server:
 ```sh
 ❯ mvn spring-boot:run
 ```
 By default, it will run on: http://localhost:8080
 
-
-
-
-
-
-### 🤖 Usage
-Run messenger using the following command:
-**Using `npm`** &nbsp; [<img align="center" src="" />]()
-
+2. Run React:
 ```sh
-❯ echo 'INSERT-RUN-COMMAND-HERE'
+❯ npm start
 ```
-
-
-### 🧪 Testing
-Run the test suite using the following command:
-**Using `npm`** &nbsp; [<img align="center" src="" />]()
-
-```sh
-❯ echo 'INSERT-TEST-COMMAND-HERE'
-```
-
+The React app will start on: http://localhost:3000
 
 ---
 ## 📌 Project Roadmap
