@@ -108,13 +108,6 @@ By default, it will run on: http://localhost:8080
 The React app will start on: http://localhost:3000
 
 ---
-## 📌 Project Roadmap
-
-- [X] **`Task 1`**: <strike>Implement feature one.</strike>
-- [ ] **`Task 2`**: Implement feature two.
-- [ ] **`Task 3`**: Implement feature three.
-
----
 
 ## 🔰 Contributing
 
